@@ -5,10 +5,10 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class ascii {
-
+	//hola
 	private int ascii;
 	private char tecla;
-
+	
 	public int getAscii() {
 		return ascii;
 	}
