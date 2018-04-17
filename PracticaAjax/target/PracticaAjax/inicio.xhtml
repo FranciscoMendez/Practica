@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+	<h:form>
+		<h1>Ejecicio 1: Fecha del sistema</h1>
+		<br/>
+		<h:inputText id="fecha" value="#{fecha.fecha}" />
+		<br/>
+		<h:commandButton action="#{fecha.calculaFecha()}" value="Recalcular" >
+			<f:ajax render="fecha"></f:ajax>
+		</h:commandButton>
+		<br/>
+		<h2>Ejercio 2: Veces que se ha precionado el boton (Socope) </h2>
+		<br/>
+		<h:inputText id="contadorInicio" value="#{contadorControlador.contador}" />
+		<br/>
+		<h:commandButton action="#{contadorControlador.Recalcular()}" value="Recalcular" >
+			<f:ajax render="contadorInicio" execute=""></f:ajax>
+		</h:commandButton>
+		<br/>
+		<h2>Ejercio 3: Veces que se ha precionado el boton (Socope) </h2>
+	</h:form>
+
+
+</body> 
+</html>

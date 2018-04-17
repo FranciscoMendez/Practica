@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+	<h:form>
+		<h1>Ejecicio 1: Fecha del sistema</h1>
+		<br/>
+		<h:inputText id="fecha" value="#{fecha.fecha}" >
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+		</h:inputText>
+		<br/>
+		<h:commandButton action="#{fecha.calculaFecha()}" value="fecha" >
+			<f:ajax render="fecha"></f:ajax>
+		</h:commandButton>
+		<br/>
+		<h2>Ejercio 2: Veces que se ha precionado el boton (Socope) </h2>
+		<br/>
+		<h:inputText id="contadorInicio" value="#{contadorControlador.contador}" />
+		<br/>
+		<h:commandButton action="#{contadorControlador.Recalcular()}" value="Recalcular ajax" >
+			<f:ajax render="contadorInicio"></f:ajax>
+		</h:commandButton>
+		<h:commandButton action="#{contadorControlador.Recalcular()}" value="Recalcular sin ajax" />
+		<br/>
+		<h3>Ejercio 3: Devolver codigo ascii de tecla presionada </h3>
+		<br/>
+		<h:inputText id="tecla" value="#{ascii.tecla}"  />
+		<h:inputText id="codigo" value="#{ascii.ascii}"  />
+		<br/>
+		<h:commandButton action="#{ascii.codigoAscii()}" value="codigo" >
+			<f:ajax render="codigo" execute="tecla"></f:ajax>
+		</h:commandButton>
+		<br/>
+		<h4>Ejercicio 4: paises, ciudades y una opcion mas (selectOneMenu)</h4>
+		Paices: <h:selectOneMenu value="#{selectOneMenu.parametroPais}">
+		<f:selectItems value="#{selectOneMenu.pais}"></f:selectItems>
+		</h:selectOneMenu>
+		<br/>
+		Ciudades: <h:selectOneMenu value="#{selectOneMenu2.parametroCiudad}">
+		<f:selectItems value="#{selectOneMenu2.ciudad}"></f:selectItems>
+		</h:selectOneMenu>
+		<br/>
+		Parroquias: <h:selectOneMenu value="#{selectOneMenu3.parametroParroquia}">
+		<f:selectItems value="#{selectOneMenu3.parroquia}"></f:selectItems>
+		</h:selectOneMenu>
+		
+	</h:form>
+
+
+</body> 
+</html>
